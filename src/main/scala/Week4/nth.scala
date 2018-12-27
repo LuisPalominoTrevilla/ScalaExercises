@@ -7,7 +7,7 @@ object nth extends App {
     else if (i == 0) list.head
     else nth(i-1, list.tail)
 
-  val list = new Cons(1, new Cons(2, new Cons(3, new Nil)))
+  val list = new Cons(1, new Cons(2, new Cons(3, Nil)))
 
   println(nth(0, list))
   println(nth(-1, list))
