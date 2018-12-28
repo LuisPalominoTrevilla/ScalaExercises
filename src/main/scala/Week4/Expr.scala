@@ -13,7 +13,6 @@ object exprs extends App {
     case Prod(e1, e2) => show(e1, false) + " * " + show(e2, false)
     case Var(x) => x
   }
-
   println(show(Sum(Number(3),  Number(23))))
   println(show(Sum(Prod(Number(3), Var("y")), Var("x"))))
   println(show(Prod(Sum(Number(3), Var("y")), Var("x"))))
