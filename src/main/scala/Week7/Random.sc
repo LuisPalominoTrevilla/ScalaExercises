@@ -21,6 +21,15 @@ val booleans = for (x <- integers) yield x > 0
 
 booleans.generate
 
+def pairs[T, U](t: Generator[T], u: Generator[U]) = for {
+  x <- t
+  y <- u
+} yield (x, y)
+
+val pairType = pairs(integers, booleans)
+
+pairType.generate
+
 def single[T](x: T): Generator[T] = new Generator[T] {
   def generate: T = x
 }
